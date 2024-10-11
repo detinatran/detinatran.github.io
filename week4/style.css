@@ -1,0 +1,27 @@
+.list {
+  color: red;
+  font-size: larger;
+}
+
+.list2 {
+  color: blue;
+  font-size: larger;
+}
+
+.div {
+  /* width: 250px;
+  height: auto; */
+  border: 1px solid #f7f381;
+  font-size: 30px;
+  width: 500px;
+  margin: 0 auto;
+  padding: 8px 24px;
+  box-shadow: 0 0 10px 2px #333333;
+  background-color: #f7f381;
+}
+.div ol {
+   margin: 12px;
+}
+.p {
+  text-align: center;
+}
