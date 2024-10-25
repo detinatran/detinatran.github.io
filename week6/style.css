@@ -1,0 +1,68 @@
+span#id1 {
+  color: blue;
+}
+span.highlight {
+  color: brown;
+}
+span.highlight#id2 {
+  color: violet;
+}
+.highlight {
+  color: antiquewhite;
+}
+p + p {
+  font-style: italic;
+}
+span + p {
+  font-style: italic;
+}
+div.items a {
+  color: red;
+}
+div.items > a {
+  color: blue;
+}
+h1 + span {
+  background-color: blue;
+}
+ul a:first-child {
+  color: violet;
+}
+.red {
+  color: red;
+}
+.underline {
+  text-decoration: underline;
+}
+.highlighted {
+  color: blue;
+  background-color: red;
+}
+p[title="menu"] {
+  font-size: 50px;
+}
+p[title] {
+  font-size: 10px;
+}
+/* apply the last one */
+ul a:hover {
+  color: blue;
+}
+a:link {
+  color: red;
+}
+
+/* visited link */
+a:visited {
+  color: green;
+}
+
+/* mouse over link */
+a:hover {
+  color: hotpink;
+}
+
+/* selected link */
+a:active {
+  color: blue;
+}
