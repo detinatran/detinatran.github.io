@@ -1,0 +1,96 @@
+/* General Body Style */
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #cfe8fc; /* Light blue background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Calculator Container */
+.calculator-container {
+  background: #ffffff; /* White card */
+  border-radius: 20px; /* Rounded corners */
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2); /* Soft shadow */
+  padding: 20px;
+  width: 320px;
+  text-align: center;
+}
+
+/* Header Style */
+.calculator-container h1 {
+  font-size: 24px;
+  color: #1976d2; /* Blue header */
+  margin-bottom: 20px;
+  font-weight: 600; /* Semi-bold */
+}
+
+/* Input Group */
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  font-size: 14px;
+  color: #616161; /* Gray label text */
+  display: block;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+.input-group input {
+  width: calc(100% - 20px);
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 16px;
+  text-align: center;
+  background-color: #f9f9f9; /* Light input background */
+  color: #333;
+  font-family: "Montserrat", sans-serif; /* Use Montserrat */
+  font-weight: 400; /* Regular weight */
+}
+
+/* Button Grid */
+.button-group {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 buttons per row */
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.button-group button {
+  background-color: #90caf9; /* Light blue button background */
+  border: none;
+  border-radius: 10px;
+  padding: 15px;
+  font-size: 18px;
+  font-weight: 600; /* Semi-bold */
+  font-family: "Montserrat", sans-serif; /* Use Montserrat */
+  color: #0d47a1; /* Darker blue text */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button-group button:hover {
+  color: #fff; /* White text on hover */
+}
+
+/* Result Display */
+/* Result Display */
+#result {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: 600; /* Semi-bold */
+  font-family: "Montserrat", sans-serif; /* Use Montserrat */
+  color: #0d47a1; /* Blue color for the result */
+  text-align: center; /* Center-align the result */
+}
+
+.logo-icon {
+  font-size: 50px; /* Adjust to your desired size */
+  color: #1976d2; /* Blue color to match theme */
+  margin-bottom: 10px; /* Space below the icon */
+}
