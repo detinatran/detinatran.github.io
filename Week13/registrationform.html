@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form</title>
+</head>
+
+<body>
+  <h1>Registration Form</h1>
+  <form id="registrationForm" novalidate>
+    <!-- Username -->
+    <label for="username">Username:</label><br>
+    <input type="text" id="username" name="username" minlength="3" required>
+    <div id="usernameError" style="color: red; display: none;">Username must be at least 3 characters long.</div><br>
+
+    <!-- Email -->
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email" required>
+    <div id="emailError" style="color: red; display: none;">Please enter a valid email address.</div><br>
+
+    <!-- Password -->
+    <label for="password">Password:</label><br>
+    <input type="password" id="password" name="password" pattern="(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}"
+      required>
+    <div id="passwordError" style="color: red; display: none;">
+      Password must be at least 8 characters long and contain a number, an uppercase letter, and a special character.
+    </div><br>
+
+    <!-- Confirm Password -->
+    <label for="confirmPassword">Confirm Password:</label><br>
+    <input type="password" id="confirmPassword" name="confirmPassword" required>
+    <div id="confirmPasswordError" style="color: red; display: none;">Passwords do not match.</div><br>
+
+    <!-- Phone Number -->
+    <label for="phoneNumber">Phone Number:</label><br>
+    <input type="tel" id="phoneNumber" name="phoneNumber" pattern="\d{3}-\d{3}-\d{4}" required>
+    <div id="phoneNumberError" style="color: red; display: none;">Please enter a valid phone number (e.g.,
+      123-456-7890).</div><br>
+
+    <!-- Submit Button -->
+    <button type="submit">Register</button>
+  </form>
+
+  <div id="successMessage" style="color: green; display: none; margin-top: 10px;">
+    Registration successful!
+  </div>
+
+  <script src="regis.js">
+
+  </script>
+</body>
+
+</html>
