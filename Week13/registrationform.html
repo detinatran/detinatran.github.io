@@ -25,7 +25,7 @@
     <input type="password" id="password" name="password" pattern="(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}"
       required>
     <div id="passwordError" style="color: red; display: none;">
-      Password must be at least 8 characters long and contain a number, an uppercase letter, and a special character.
+      Password must be at least 8 characters long and contain at least one number and one special character.
     </div><br>
 
     <!-- Confirm Password -->
@@ -37,7 +37,7 @@
     <label for="phoneNumber">Phone Number:</label><br>
     <input type="tel" id="phoneNumber" name="phoneNumber" pattern="\d{3}-\d{3}-\d{4}" required>
     <div id="phoneNumberError" style="color: red; display: none;">Please enter a valid phone number (e.g.,
-      123-456-7890).</div><br>
+      XXX-XXX-XXXX).</div><br>
 
     <!-- Submit Button -->
     <button type="submit">Register</button>
