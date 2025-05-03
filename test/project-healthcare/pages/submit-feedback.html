@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Submit Feedback - Patient Portal</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <script src="../js/main.js" defer></script>
+</head>
+
+<body>
+  <header class="page-header">
+    <div class="logo">
+      <img src="../assets/icons/healthcare.png" alt="Hospital Logo" class="logo-image">
+      <span class="logo-text">Hospital's Name</span>
+    </div>
+  </header>
+  <div class="container">
+    <!-- Sidebar Navigation -->
+    <div class="sidebar">
+      <ul class="sidebar-menu">
+        <li><a href="appointment.html">Appointment</a></li>
+        <li><a href="records.html">Records</a></li>
+        <li><a href="medications.html">Medications</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="settings.html">Setting</a></li>
+      </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Feedback Form -->
+      <form id="feedback-form">
+        <div class="form-group">
+          <label>Rating</label>
+          <div class="stars">
+            <input type="radio" id="star5" name="rating" value="5" />
+            <label for="star5">★</label>
+            <input type="radio" id="star4" name="rating" value="4" />
+            <label for="star4">★</label>
+            <input type="radio" id="star3" name="rating" value="3" />
+            <label for="star3">★</label>
+            <input type="radio" id="star2" name="rating" value="2" />
+            <label for="star2">★</label>
+            <input type="radio" id="star1" name="rating" value="1" />
+            <label for="star1">★</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="doctor">Doctor's Name</label>
+          <select id="doctor" class="form-control">
+            <option selected disabled>Select doctor</option>
+            <option>Dr. Smith</option>
+            <option>Dr. Johnson</option>
+            <option>Dr. Williams</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="visit-date">Date of visit</label>
+          <input type="date" id="visit-date" class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label for="comment">Comment</label>
+          <textarea id="comment" class="form-control" rows="5"></textarea>
+        </div>
+
+        <div class="form-action">
+          <button type="submit" class="submit-button" data-form-type="feedback">Submit feedback</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>

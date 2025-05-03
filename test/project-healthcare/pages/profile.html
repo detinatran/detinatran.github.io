@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile - Patient Portal</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <script src="../js/main.js" defer></script>
+</head>
+
+<body>
+  <header class="page-header">
+    <div class="logo">
+      <img src="../assets/icons/healthcare.png" alt="Hospital Logo" class="logo-image">
+      <span class="logo-text">Hospital's Name</span>
+    </div>
+  </header>
+  <div class="page-header">Profile - patient</div>
+  <div class="container">
+    <!-- Sidebar Navigation -->
+    <div class="sidebar">
+      <ul class="sidebar-menu">
+        <li><a href="appointment.html">Appointment</a></li>
+        <li><a href="records.html">Records</a></li>
+        <li><a href="medications.html">Medications</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="settings.html">Setting</a></li>
+      </ul>
+    </div>
+
+    <!-- Main Content -->
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Patient Portal Dashboard</title>
+      <style>
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          font-family: "Poppins", Arial, sans-serif;
+          /* Updated font-family */
+        }
+
+        body {
+          background-color: #f0e6ff;
+          color: #333;
+
+        }
+
+        .dashboard {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 20px;
+          max-width: 1600px;
+          margin: 0 auto;
+          margin-top: 10px;
+          margin-left: 20px;
+        }
+
+        .card {
+          background-color: white;
+          border-radius: 15px;
+          padding: 20px;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 15px;
+        }
+
+        .card-header h2 {
+          font-size: 18px;
+          color: #333;
+        }
+
+        .card-header .more {
+          color: #666;
+          cursor: pointer;
+        }
+
+        /* Personal Info Section */
+        .personal-info {
+          display: flex;
+          gap: 20px;
+        }
+
+        .profile-image {
+          width: 80px;
+          height: 80px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+
+        .heart-icon {
+          color: #3498db;
+          cursor: pointer;
+        }
+
+        .info-grid {
+          display: grid;
+          grid-template-columns: auto 1fr;
+          gap: 10px;
+          margin-top: 10px;
+        }
+
+        .info-label {
+          color: #777;
+          font-size: 14px;
+        }
+
+        .info-value {
+          font-weight: 500;
+        }
+
+        .patient-name {
+          font-size: 20px;
+          font-weight: 600;
+          margin-bottom: 2px;
+        }
+
+        .patient-type {
+          color: #777;
+          font-size: 14px;
+          margin-bottom: 10px;
+        }
+
+        /* Vitals Section */
+        .vitals-container {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 20px;
+        }
+
+        .vital-item {
+          margin-bottom: 20px;
+        }
+
+        .vital-header {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 10px;
+        }
+
+        .vital-title {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+        }
+
+        .vital-icon {
+          width: 24px;
+          height: 24px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .vital-icon.temp {
+          color: #e74c3c;
+        }
+
+        .vital-icon.bp {
+          color: #2ecc71;
+        }
+
+        .vital-icon.resp {
+          color: #2ecc71;
+        }
+
+        .vital-icon.heart {
+          color: #3498db;
+        }
+
+        .vital-value {
+          font-weight: 600;
+          font-size: 18px;
+        }
+
+        .vital-unit {
+          font-size: 12px;
+          color: #999;
+        }
+
+        .progress-bar {
+          height: 8px;
+          width: 100%;
+          background-color: #f0f0f0;
+          border-radius: 4px;
+          margin-top: 8px;
+          position: relative;
+        }
+
+        .progress-bar.temp .progress {
+          background: linear-gradient(to right, #fff5f5, #e74c3c);
+        }
+
+        .progress-bar.bp .progress {
+          background: linear-gradient(to right, #f0fff0, #2ecc71);
+        }
+
+        .progress {
+          height: 100%;
+          border-radius: 4px;
+          position: absolute;
+        }
+
+        .progress-markers {
+          display: flex;
+          justify-content: space-between;
+          font-size: 12px;
+          color: #999;
+          margin-top: 5px;
+        }
+
+        .chart {
+          margin-top: 20px;
+          width: 100%;
+          height: 60px;
+        }
+
+        .chart path {
+          stroke-width: 2;
+          fill: none;
+        }
+
+        .chart.resp path {
+          stroke: #2ecc71;
+          fill: rgba(46, 204, 113, 0.1);
+        }
+
+        .chart.heart path {
+          stroke: #3498db;
+          fill: rgba(52, 152, 219, 0.1);
+        }
+
+        /* Appointments Section */
+        .appointments-list {
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+        }
+
+        .appointment-item {
+          display: flex;
+          align-items: center;
+        }
+
+        .appointment-dot {
+          width: 10px;
+          height: 10px;
+          background-color: #ff7f50;
+          border-radius: 50%;
+          margin-right: 12px;
+        }
+
+        .appointment-details {
+          flex-grow: 1;
+        }
+
+        .appointment-name {
+          font-weight: 500;
+        }
+
+        .appointment-date {
+          font-size: 12px;
+          color: #999;
+        }
+
+        .appointment-time {
+          margin-left: auto;
+          font-weight: 500;
+        }
+
+        .show-all,
+        .see-more {
+          color: #3498db;
+          text-align: right;
+          font-size: 14px;
+          text-decoration: none;
+          display: block;
+          margin-top: 10px;
+          cursor: pointer;
+        }
+
+        /* Blood Analysis Section */
+        .blood-analysis-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        .period-selector {
+          font-size: 14px;
+          color: #3498db;
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+        }
+
+        .hematocrit-indicator {
+          position: absolute;
+          right: 0;
+          top: 20%;
+          background-color: white;
+          border: 1px solid #ff7f50;
+          border-radius: 5px;
+          padding: 5px 10px;
+        }
+
+        .hematocrit-value {
+          font-weight: bold;
+          color: #333;
+        }
+
+        .hematocrit-status {
+          font-size: 12px;
+          color: #999;
+        }
+
+        .blood-chart-container {
+          position: relative;
+          height: 200px;
+          margin-top: 20px;
+        }
+
+        .y-axis {
+          position: absolute;
+          left: 0;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+        }
+
+        .y-axis-label {
+          font-size: 12px;
+          color: #999;
+        }
+
+        .blood-chart {
+          position: absolute;
+          left: 30px;
+          right: 0;
+          height: 100%;
+          background: linear-gradient(to top, rgba(255, 127, 80, 0.1), rgba(255, 127, 80, 0.5));
+          border-radius: 0 10px 10px 0;
+          clip-path: polygon(0 100%,
+              14% 90%,
+              28% 85%,
+              42% 80%,
+              56% 70%,
+              70% 50%,
+              84% 35%,
+              100% 25%,
+              100% 100%);
+        }
+
+        .x-axis {
+          display: flex;
+          justify-content: space-between;
+          margin-top: 10px;
+        }
+
+        .x-axis-label {
+          font-size: 12px;
+          color: #999;
+        }
+
+        /* Patient Visit Section */
+        .gender-legend {
+          display: flex;
+          justify-content: flex-end;
+          gap: 20px;
+          margin-bottom: 10px;
+        }
+
+        .legend-item {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          font-size: 12px;
+          color: #777;
+        }
+
+        .legend-color {
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+        }
+
+        .legend-color.male {
+          background-color: #3498db;
+        }
+
+        .legend-color.female {
+          background-color: #ff7f50;
+        }
+
+        .bar-chart {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-end;
+          height: 200px;
+        }
+
+        .bar-group {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 30px;
+        }
+
+        .bar-container {
+          display: flex;
+          flex-direction: column;
+          width: 20px;
+        }
+
+        .bar {
+          width: 100%;
+        }
+
+        .bar.male {
+          background-color: #3498db;
+          border-radius: 2px 2px 0 0;
+        }
+
+        .bar.female {
+          background-color: #ff7f50;
+          border-radius: 2px 2px 0 0;
+        }
+
+        .bar-label {
+          font-size: 12px;
+          color: #999;
+          margin-top: 5px;
+        }
+
+        .y-values {
+          position: absolute;
+          left: 0;
+          height: 200px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+        }
+
+        .y-value {
+          font-size: 12px;
+          color: #999;
+        }
+
+        /* Yoga Promo Section */
+        .promo-section {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 20px;
+        }
+
+        .promo-content {
+          max-width: 50%;
+        }
+
+        .promo-title {
+          font-size: 20px;
+          font-weight: 600;
+          margin-bottom: 10px;
+          color: #333;
+        }
+
+        .promo-text {
+          font-size: 14px;
+          color: #666;
+          margin-bottom: 15px;
+        }
+
+        .promo-button {
+          background-color: #3498db;
+          color: white;
+          border: none;
+          border-radius: 20px;
+          padding: 8px 16px;
+          font-size: 14px;
+          cursor: pointer;
+        }
+
+        .promo-image {
+          max-width: 50%;
+          height: auto;
+        }
+      </style>
+    </head>
+
+    <body>
+      <div class="dashboard">
+        <!-- Personal Information Card -->
+        <div class="card">
+          <div class="card-header">
+            <h2>Personal Information</h2>
+            <span class="more">⋮</span>
+          </div>
+          <div class="personal-info">
+            <img src="/api/placeholder/80/80" alt="Profile" class="profile-image">
+            <div>
+              <div class="patient-name">Sophia Dess <span class="heart-icon">♡</span></div>
+              <div class="patient-type">Patient</div>
+              <div class="info-grid">
+                <div class="info-label">Blood Group</div>
+                <div class="info-value">B+</div>
+
+                <div class="info-label">Sex</div>
+                <div class="info-value">Female</div>
+
+                <div class="info-label">Phone</div>
+                <div class="info-value">(228)-789-7878</div>
+
+                <div class="info-label">Address</div>
+                <div class="info-value">Toronto, Canada</div>
+
+                <div class="info-label">Born</div>
+                <div class="info-value">Ottawa</div>
+
+                <div class="info-label">Age</div>
+                <div class="info-value">27</div>
+
+                <div class="info-label">Weight</div>
+                <div class="info-value">59 kg</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Vitals Signs Card -->
+        <div class="card">
+          <div class="card-header">
+            <h2>Vitals Signs</h2>
+            <span class="more">⋮</span>
+          </div>
+          <div class="vitals-container">
+            <!-- Temperature -->
+            <div class="vital-item">
+              <div class="vital-header">
+                <div class="vital-title">
+                  <div class="vital-icon temp">❤️</div>
+                  <span>Temperature</span>
+                </div>
+                <div class="vital-value">98.6</div>
+              </div>
+              <div class="progress-bar temp">
+                <div class="progress" style="width: 85%;"></div>
+              </div>
+              <div class="progress-markers">
+                <span>85</span>
+                <span>98.6</span>
+              </div>
+            </div>
+
+            <!-- Blood Pressure -->
+            <div class="vital-item">
+              <div class="vital-header">
+                <div class="vital-title">
+                  <div class="vital-icon bp">💚</div>
+                  <span>Blood Pressure</span>
+                </div>
+                <div class="vital-value">120/83 <span class="vital-unit">(mmHg)</span></div>
+              </div>
+              <div class="progress-bar bp">
+                <div class="progress" style="width: 75%;"></div>
+              </div>
+              <div class="progress-markers">
+                <span>90/50</span>
+                <span>120/83</span>
+              </div>
+            </div>
+
+            <!-- Respiratory rate -->
+            <div class="vital-item">
+              <div class="vital-header">
+                <div class="vital-title">
+                  <div class="vital-icon resp">💚</div>
+                  <span>Respiratory rate</span>
+                </div>
+                <div class="vital-value">16.00 <span class="vital-unit">(per min)</span></div>
+              </div>
+              <svg class="chart resp" viewBox="0 0 100 20">
+                <path d="M0,10 C10,5 20,15 30,10 C40,5 50,15 60,10 C70,5 80,15 90,10 C95,5 100,10 100,10"></path>
+              </svg>
+            </div>
+
+            <!-- Heart Rate -->
+            <div class="vital-item">
+              <div class="vital-header">
+                <div class="vital-title">
+                  <div class="vital-icon heart">💙</div>
+                  <span>Heart Rate</span>
+                </div>
+                <div class="vital-value">74.67 <span class="vital-unit">(bpm)</span></div>
+              </div>
+              <svg class="chart heart" viewBox="0 0 100 20">
+                <path
+                  d="M0,10 C5,12 10,8 15,10 C20,12 25,8 30,10 C35,12 40,8 45,10 C50,12 55,8 60,10 C65,12 70,8 75,10 C80,12 85,8 90,10 C95,12 100,8 100,10">
+                </path>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Appointments Card -->
+        <div class="card">
+          <div class="card-header">
+            <h2>Appointments</h2>
+            <a href="#" class="show-all">Show all</a>
+          </div>
+          <div class="appointments-list">
+            <div class="appointment-item">
+              <div class="appointment-dot"></div>
+              <div class="appointment-details">
+                <div class="appointment-name">Christian Solan</div>
+                <div class="appointment-date">11th Feb 2020</div>
+              </div>
+              <div class="appointment-time">11:00 AM</div>
+            </div>
+
+            <div class="appointment-item">
+              <div class="appointment-dot"></div>
+              <div class="appointment-details">
+                <div class="appointment-name">James Cooper</div>
+                <div class="appointment-date">11th Feb 2020</div>
+              </div>
+              <div class="appointment-time">01:00 PM</div>
+            </div>
+
+            <div class="appointment-item">
+              <div class="appointment-dot"></div>
+              <div class="appointment-details">
+                <div class="appointment-name">David Warner</div>
+                <div class="appointment-date">11th Feb 2020</div>
+              </div>
+              <div class="appointment-time">03:00 PM</div>
+            </div>
+
+            <div class="appointment-item">
+              <div class="appointment-dot"></div>
+              <div class="appointment-details">
+                <div class="appointment-name">Jass Walker</div>
+                <div class="appointment-date">11th Feb 2020</div>
+              </div>
+              <div class="appointment-time">04:00 PM</div>
+            </div>
+          </div>
+          <a href="#" class="see-more">See more</a>
+        </div>
+
+        <!-- Blood Analysis Card -->
+        <div class="card">
+          <div class="blood-analysis-header">
+            <div class="card-header">
+              <h2>Blood Analysis</h2>
+            </div>
+            <div class="period-selector">
+              Days ▼
+            </div>
+          </div>
+          <div class="blood-chart-container">
+            <div class="hematocrit-indicator">
+              <div class="hematocrit-value">25% Hematocrit</div>
+              <div class="hematocrit-status">while fasting</div>
+            </div>
+            <div class="y-axis">
+              <div class="y-axis-label">40%</div>
+              <div class="y-axis-label">30%</div>
+              <div class="y-axis-label">20%</div>
+              <div class="y-axis-label">10%</div>
+              <div class="y-axis-label">0</div>
+            </div>
+            <div class="blood-chart"></div>
+          </div>
+          <div class="x-axis">
+            <div class="x-axis-label">Sat</div>
+            <div class="x-axis-label">Sun</div>
+            <div class="x-axis-label">Mon</div>
+            <div class="x-axis-label">Tue</div>
+            <div class="x-axis-label">Wed</div>
+            <div class="x-axis-label">Thu</div>
+            <div class="x-axis-label">Fri</div>
+          </div>
+        </div>
+
+        <!-- Patient Visit By Gender Card -->
+        <div class="card">
+          <div class="card-header">
+            <h2>Patient Visit By Gender</h2>
+            <div class="period-selector">
+              Monthly ▼
+            </div>
+          </div>
+          <div class="gender-legend">
+            <div class="legend-item">
+              <div class="legend-color male"></div>
+              <span>Male</span>
+            </div>
+            <div class="legend-item">
+              <div class="legend-color female"></div>
+              <span>Female</span>
+            </div>
+          </div>
+          <div style="position: relative;">
+            <div class="y-values">
+              <div class="y-value">8k</div>
+              <div class="y-value">6k</div>
+              <div class="y-value">4k</div>
+              <div class="y-value">2k</div>
+              <div class="y-value">0</div>
+            </div>
+            <div class="bar-chart" style="margin-left: 25px;">
+              <div class="bar-group">
+                <div class="bar-container">
+                  <div class="bar female" style="height: 60px;"></div>
+                  <div class="bar male" style="height: 40px;"></div>
+                </div>
+                <div class="bar-label">Jan</div>
+              </div>
+              <div class="bar-group">
+                <div class="bar-container">
+                  <div class="bar female" style="height: 40px;"></div>
+                  <div class="bar male" style="height: 70px;"></div>
+                </div>
+                <div class="bar-label">Feb</div>
+              </div>
+              <div class="bar-group">
+                <div class="bar-container">
+                  <div class="bar female" style="height: 30px;"></div>
+                  <div class="bar male" style="height: 60px;"></div>
+                </div>
+                <div class="bar-label">Mar</div>
+              </div>
+              <div class="bar-group">
+                <div class="bar-container">
+                  <div class="bar female" style="height: 80px;"></div>
+                  <div class="bar male" style="height: 20px;"></div>
+                </div>
+                <div class="bar-label">Apr</div>
+              </div>
+              <div class="bar-group">
+                <div class="bar-container">
+                  <div class="bar female" style="height: 30px;"></div>
+                  <div class="bar male" style="height: 20px;"></div>
+                </div>
+                <div class="bar-label">May</div>
+              </div>
+              <div class="bar-group">
+                <div class="bar-container">
+                  <div class="bar female" style="height: 50px;"></div>
+                  <div class="bar male" style="height: 40px;"></div>
+                </div>
+                <div class="bar-label">Jun</div>
+              </div>
+              <div class="bar-group">
+                <div class="bar-container">
+                  <div class="bar female" style="height: 40px;"></div>
+                  <div class="bar male" style="height: 60px;"></div>
+                </div>
+                <div class="bar-label">Jul</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Yoga Promo Card -->
+        <div class="card">
+          <div class="promo-section">
+            <div class="promo-content">
+              <h3 class="promo-title">Yogalisum</h3>
+              <p class="promo-text">Join our yoga classes to get fit.</p>
+              <button class="promo-button">Click Here</button>
+            </div>
+            <img src="/api/placeholder/200/150" alt="Yoga" class="promo-image">
+          </div>
+        </div>
+      </div>
+    </body>
+
+    </html>
+</body>
+
+</html>
