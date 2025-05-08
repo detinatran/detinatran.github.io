@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Dashboard - View Reports</title>
+  <title>Admin Dashboard - Home</title>
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 </head>
 
 <body>
@@ -18,7 +18,7 @@
   </header>
   <div class="page-header">
     <div class="logo">
-      <span>Admin-View Reports</span>
+      <span>Admin-Manage Users</span>
     </div>
   </div>
 
@@ -38,30 +38,32 @@
     <!-- Main Content -->
     <div class="main-content">
       <div class="header">
-        <h1>View Reports</h1>
+        <h2>View Reports</h2>
+        <div class="header-actions">
+          <div class="notification-profile">
+
+          </div>
+        </div>
       </div>
 
-      <!-- Reports Cards -->
-      <div class="reports-grid">
-        <div class="report-card">
-          <div class="report-name">Patients Report</div>
+      <!-- Department Cards Grid -->
+      <div class="departments-grid">
+        <div class="department-card">
+          <div class="department-name">Patients ReportReport</div>
         </div>
-        <div class="report-card">
-          <div class="report-name">Appointments Report</div>
+
+        <div class="department-card">
+          <div class="department-name">Appointments Report</div>
         </div>
-        <div class="report-card">
-          <div class="report-name">Feedbacks Report</div>
+
+        <div class="department-card">
+          <div class="department-name">Feedbacks Report</div>
         </div>
+
+
       </div>
     </div>
   </div>
-
-  <script>
-    document.querySelector('.menu-toggle').addEventListener('click', function () {
-      document.querySelector('.sidebar').classList.toggle('collapsed');
-      document.querySelector('.main-content').classList.toggle('expanded');
-    });
-  </script>
 </body>
 
 </html>

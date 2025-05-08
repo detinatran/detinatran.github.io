@@ -38,11 +38,11 @@
     <!-- Main Content -->
     <div class="main-content">
       <div class="header">
-        <h1>System Settings</h1>
+        <h2>System Settings</h2>
       </div>
 
       <!-- Settings Form -->
-      <div class="settings-form">
+      < class="settings-form">
         <div class="form-group">
           <label for="siteName">Site Name</label>
           <input type="text" id="siteName" class="form-control" value="Hospital Management System">
@@ -51,27 +51,45 @@
           <label for="siteEmail">Site Email</label>
           <input type="email" id="siteEmail" class="form-control" value="admin@hospital.com">
         </div>
-        <div class="form-group">
-          <label for="timezone">Timezone</label>
-          <select id="timezone" class="form-control">
-            <option value="UTC">UTC</option>
-            <option value="EST" selected>EST</option>
-            <option value="CST">CST</option>
-            <option value="PST">PST</option>
-          </select>
+
+
+
+
+        <div class="card">
+          <div class="card-header">
+            <h3>Change Password</h3>
+          </div>
+          <form action="change_password.php" method="POST">
+            <div class="info-grid">
+              <div class="info-label">Current Password</div>
+              <input type="password" name="current_password" required>
+
+              <div class="info-label">New Password</div>
+              <input type="password" name="new_password" id="new_password" required>
+
+              <div class="info-label">Confirm New Password</div>
+              <input type="password" name="confirm_new_password" id="confirm_new_password" required>
+
+              <div class="password-requirements">
+                Password must be at least 8 characters and include uppercase, lowercase, numbers, and special
+                characters.
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Change Password</button>
+              </div>
+            </div>
+          </form>
         </div>
-        <div class="form-group">
-          <label for="maintenanceMode">Maintenance Mode</label>
-          <select id="maintenanceMode" class="form-control">
-            <option value="0" selected>Off</option>
-            <option value="1">On</option>
-          </select>
-        </div>
+
+
+
         <div class="form-action">
           <button type="submit">Save Settings</button>
         </div>
-      </div>
+
     </div>
+  </div>
   </div>
 
   <script>

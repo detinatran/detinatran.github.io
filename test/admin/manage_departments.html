@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Dashboard - Manage Departments</title>
+  <title>Admin Dashboard - Home</title>
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 </head>
 
 <body>
@@ -18,7 +18,7 @@
   </header>
   <div class="page-header">
     <div class="logo">
-      <span>Admin-Manage Departments</span>
+      <span>Admin-Manage Users</span>
     </div>
   </div>
 
@@ -38,36 +38,34 @@
     <!-- Main Content -->
     <div class="main-content">
       <div class="header">
-        <h1>Manage Departments</h1>
+        <h2>Manage Departments</h2>
         <div class="header-actions">
-          <a href="add_department.html" class="button">Add</a>
+          <div class="notification-profile">
+
+          </div>
         </div>
       </div>
 
-      <!-- Department Cards -->
+      <!-- Department Cards Grid -->
       <div class="departments-grid">
         <div class="department-card">
-          <div class="department-name">Department's Name</div>
+          <div class="department-name"><a href="manage_departments_detail.html">Department's Name</a></div>
         </div>
-        <div class="department-card selected">
-          <div class="department-name">Department's Name</div>
-        </div>
+
         <div class="department-card">
           <div class="department-name">Department's Name</div>
         </div>
+
+        <div class="department-card">
+          <div class="department-name">Department's Name</div>
+        </div>
+
         <div class="department-card">
           <div class="department-name">Department's Name</div>
         </div>
       </div>
     </div>
   </div>
-
-  <script>
-    document.querySelector('.menu-toggle').addEventListener('click', function () {
-      document.querySelector('.sidebar').classList.toggle('collapsed');
-      document.querySelector('.main-content').classList.toggle('expanded');
-    });
-  </script>
 </body>
 
 </html>
