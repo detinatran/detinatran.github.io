@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - User Detail</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+  <header class="page-header">
+    <div class="logo">
+      <img src="assets/icons/healthcare.png" alt="Hospital Logo" class="logo-image">
+      <span class="logo-text">Hospital's Name</span>
+    </div>
+  </header>
+  <div class="page-header">
+    <div class="logo">
+      <span>Admin-Manage Users-information</span>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <ul class="sidebar-menu">
+        <li><a href="index.php">Home</a></li>
+        <li class="active"><a href="manage_users.php">Manage Users</a></li>
+        <li><a href="manage_departments.php">Manage Departments</a></li>
+        <li><a href="view_reports.php">View Reports</a></li>
+        <li><a href="view_appointments.php">View Appointments</a></li>
+        <li><a href="system_settings.php">System Settings</a></li>
+      </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <div class="header">
+        <h1>Manage Users</h1>
+      </div>
+
+      <!-- User Details -->
+      <div class="user-detail-card">
+        <div class="user-image">
+          <div class="user-avatar"></div>
+        </div>
+        <div class="user-info">
+          <h2>USER'S INFORMATION</h2>
+          <div class="detail-row">
+            <div class="detail-label">Full Name:</div>
+            <div class="detail-value"></div>
+          </div>
+          <div class="detail-row">
+            <div class="detail-label">Phone Number:</div>
+            <div class="detail-value"></div>
+          </div>
+          <div class="detail-row">
+            <div class="detail-label">Email:</div>
+            <div class="detail-value"></div>
+          </div>
+          <div class="detail-row">
+            <div class="detail-label">Role:</div>
+            <div class="detail-value"></div>
+          </div>
+          <div class="detail-row">
+            <div class="detail-label">Status:</div>
+            <div class="detail-value"></div>
+          </div>
+          <div class="user-actions">
+            <a href="edit_user.html" class="button">Edit</a>
+            <button class="danger-button">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.querySelector('.menu-toggle').addEventListener('click', function () {
+      document.querySelector('.sidebar').classList.toggle('collapsed');
+      document.querySelector('.main-content').classList.toggle('expanded');
+    });
+  </script>
+</body>
+
+</html>
